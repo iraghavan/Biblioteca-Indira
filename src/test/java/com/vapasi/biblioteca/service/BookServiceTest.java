@@ -22,8 +22,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)

@@ -101,7 +101,7 @@ public class LibraryControllerTest {
         List<Book> unCheckedOutBooks = allBooks.stream().filter(b -> b.isAvailable()).collect(Collectors.toList());
         List<BookResponse> serviceResponse = unCheckedOutBooks.stream().map(b -> new BookResponse(b.getIsbn(), b.getTitle(), b.getAuthor(), b.getPublished(), b.getPublisher(), b.getImageurl())).collect(Collectors.toList());
 
-        when(bookService.getAllUncheckedOutBooks()).thenReturn(serviceResponse);
+        when(bookService.getAllBooks(true)).thenReturn(serviceResponse);
 
         List<JSONObject> jsonObjects = unCheckedOutBooks.stream().map(LibraryControllerTest::apply).collect(Collectors.toList());
 

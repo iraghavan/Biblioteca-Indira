@@ -56,8 +56,10 @@ public class BookService {
         }
 
         bookToCheckout.setAvailable(false);
-        String loggedInUser = SecurityContextHolder.getContext().getAuthentication().getPrincipal().toString();
-        bookToCheckout.setLastUserToCheckOut(new UserAccount(loggedInUser));
+        if(SecurityContextHolder.getContext().getAuthentication() != null && SecurityContextHolder.getContext().getAuthentication().getPrincipal() != null ) {
+            String loggedInUser = SecurityContextHolder.getContext().getAuthentication().getPrincipal().toString();
+            bookToCheckout.setLastUserToCheckOut(new UserAccount(loggedInUser));
+        }
         bookRepository.save(bookToCheckout);
         return new CheckoutResponse(Constants.CHECKOUT_SUCCESS);
     }
@@ -79,7 +81,8 @@ public class BookService {
 
         }
 
-        if(!bookToReturn.getLastUserToCheckOut().getLibrarynumber().equals(SecurityContextHolder.getContext().getAuthentication().getPrincipal().toString())) {
+
+        if(SecurityContextHolder.getContext().getAuthentication() != null && SecurityContextHolder.getContext().getAuthentication().getPrincipal() != null && !bookToReturn.getLastUserToCheckOut().getLibrarynumber().equals(SecurityContextHolder.getContext().getAuthentication().getPrincipal().toString())) {
             throw new NotAValidBookException(
                     "User requesting return has not borrowed this book.");
 
