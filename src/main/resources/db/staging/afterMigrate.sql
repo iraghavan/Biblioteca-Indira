@@ -1,0 +1,33 @@
+DELETE from BOOK;
+INSERT INTO BOOK(id,isbn,title,author,published,publisher,imageurl,available) values(nextval('book_seq'),'375704961', 'Refactoring', 'Martin Fowler', 1999, 'Random house 1', 'http://images.amazon.com/images/P/0375704965.01.a.jpg', true);
+INSERT INTO BOOK(id,isbn,title,author,published,publisher,imageurl,available) values(nextval('book_seq'),'3757049612', 'Refactoring', 'Martin Fowler', 1999, 'Random house 1', 'http://images.amazon.com/images/P/0375704965.01.a.jpg', false);
+INSERT INTO BOOK(id,isbn,title,author,published,publisher,imageurl,available) values(nextval('book_seq'),'3757049613', 'Refactoring', 'Martin Fowler', 1999, 'Random house 1', 'http://images.amazon.com/images/P/0375704965.01.a.jpg', true);
+INSERT INTO BOOK(id,isbn,title,author,published,publisher,imageurl,available) values(nextval('book_seq'),'375704962', 'Effective Java', 'Joshua Bloch', 2007, 'Oxford Publishing', 'http://images.amazon.com/images/P/0375704965.01.b.jpg', true);
+INSERT INTO BOOK(id,isbn,title,author,published,publisher,imageurl,available) values(nextval('book_seq'),'3757049621', 'Effective Java', 'Joshua Bloch', 2007, 'Oxford Publishing', 'http://images.amazon.com/images/P/0375704965.01.b.jpg', true);
+INSERT INTO BOOK(id,isbn,title,author,published,publisher,imageurl,available) values(nextval('book_seq'),'3757049622', 'Effective Java', 'Joshua Bloch', 2007, 'Oxford Publishing', 'http://images.amazon.com/images/P/0375704965.01.b.jpg', false);
+INSERT INTO BOOK(id,isbn,title,author,published,publisher,imageurl,available) values(nextval('book_seq'),'375704963', 'Head First Design Patterns', 'Eric Freeman', 2004, 'O Reilly', 'http://images.amazon.com/images/P/0375704965.01.c.jpg', true);
+INSERT INTO BOOK(id,isbn,title,author,published,publisher,imageurl,available) values(nextval('book_seq'),'3757049631', 'Head First Design Patterns', 'Eric Freeman', 2004, 'O Reilly', 'http://images.amazon.com/images/P/0375704965.01.c.jpg', false);
+INSERT INTO BOOK(id,isbn,title,author,published,publisher,imageurl,available) values(nextval('book_seq'),'3757049641', 'Domain-driven design', 'Eric Evans', 2004, 'Harper Collins', 'http://images.amazon.com/images/P/0375704965.01.d.jpg',true);
+INSERT INTO BOOK(id,isbn,title,author,published,publisher,imageurl,available) values(nextval('book_seq'),'3757049642', 'Domain-driven design', 'Eric Evans', 2004, 'Harper Collins', 'http://images.amazon.com/images/P/0375704965.01.d.jpg',true);
+INSERT INTO BOOK(id,isbn,title,author,published,publisher,imageurl,available) values(nextval('book_seq'),'3757049643', 'Domain-driven design', 'Eric Evans', 2004, 'Harper Collins', 'http://images.amazon.com/images/P/0375704965.01.d.jpg',false);
+INSERT INTO BOOK(id,isbn,title,author,published,publisher,imageurl,available) values(nextval('book_seq'),'3757049644', 'Domain-driven design', 'Eric Evans', 2004, 'Harper Collins', 'http://images.amazon.com/images/P/0375704965.01.d.jpg',true);
+INSERT INTO BOOK(id,isbn,title,author,published,publisher,imageurl,available) values(nextval('book_seq'),'3757049645', 'Domain-driven design', 'Eric Evans', 2004, 'Harper Collins', 'http://images.amazon.com/images/P/0375704965.01.d.jpg',false);
+INSERT INTO BOOK(id,isbn,title,author,published,publisher,imageurl,available) values(nextval('book_seq'),'375704965', 'Springboot in action', 'Craig Walls', 2016, 'Macmillan publishers', 'http://images.amazon.com/images/P/0375704965.01.e.jpg',false);
+INSERT INTO BOOK(id,isbn,title,author,published,publisher,imageurl,available) values(nextval('book_seq'),'375704966', 'Head first java', 'Kathy Sierra', 1999, 'Penguin', 'http://images.amazon.com/images/P/0375704965.01.f.jpg',true);
+INSERT INTO BOOK(id,isbn,title,author,published,publisher,imageurl,available) values(nextval('book_seq'),'3757049661', 'Head first java', 'Kathy Sierra', 1999, 'Penguin', 'http://images.amazon.com/images/P/0375704965.01.f.jpg',true);
+INSERT INTO BOOK(id,isbn,title,author,published,publisher,imageurl,available) values(nextval('book_seq'),'375704967', 'Sense and Sensibility', 'Jane Austin', 1849, 'Random house', 'http://images.amazon.com/images/P/0375704965.01.g.jpg', false);
+
+DELETE from MOVIE;
+INSERT INTO MOVIE(id,name,director,released,rating,available,total) values(nextval('movie_seq'),'Inception', 'Christoper Nolan', 2010, 2, 3, 3);
+INSERT INTO MOVIE(id,name,director,released,rating,available,total) values(nextval('movie_seq'),'Titanic', 'James Cameroon', 1999, 3 , 2, 5);
+INSERT INTO MOVIE(id,name,director,released,rating,available,total) values(nextval('movie_seq'),'Spider Man', 'Andrew Guy', 2015, 2, 0, 3);
+INSERT INTO MOVIE(id,name,director,released,rating,available,total) values(nextval('movie_seq'),'Avatar', 'Steven Speilburg', 2000, 1 , 2, 5);
+INSERT INTO MOVIE(id,name,director,released,rating,available,total) values(nextval('movie_seq'),'Iron Man', 'Jon Favreau', 2018, 2 , 3, 6);
+INSERT INTO MOVIE(id,name,director,released,available,total) values(nextval('movie_seq'),'Bahubali', 'Rajamouli', 2015, 3, 6);
+
+delete from useraccount;
+insert into useraccount(librarynumber, password, name, email, phone)  values('111-2222',crypt('1234 5678', gen_salt('bf')), 'susanth', 'susanth@gmail.com', '8888888888');
+insert into useraccount(librarynumber, password, name, email, phone) values('111-3333',crypt('1234 56546', gen_salt('bf')), 'Janavi', 'janavi@gmail.com', '9999999999');
+insert into useraccount(librarynumber, password, name, email, phone) values('111-4444',crypt('1234 563445', gen_salt('bf')), 'Varun', 'varun@gmail.com', '1234567890');
+insert into useraccount(librarynumber, password, name, email, phone) values('111-5555',crypt('1234 5645', gen_salt('bf')), 'Adeesh', 'adeesh@gmail.com', '1234567890');
+insert into useraccount(librarynumber, password, name, email, phone) values('111-6666',crypt('1234 56342abc@', gen_salt('bf')), 'samarth', 'samarth@gmail.com', '1234567890');

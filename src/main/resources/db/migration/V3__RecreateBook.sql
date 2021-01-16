@@ -1,0 +1,2 @@
+DROP TABLE Book;
+CREATE TABLE Book(id bigint constraint book_pk primary key, isbn character varying(20) not null, title character varying(255) not null, author character varying(255), published int, publisher character varying(255), imageurl character varying(255), available boolean default true, UNIQUE(isbn));
